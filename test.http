@@ -12,3 +12,6 @@ GET http://localhost:3000/tasks
 
 ###
 GET http://localhost:3000/tasks/6dc8a582-bffe-43e1-ba12-22a61cd734ac
+
+###
+DELETE http://localhost:3000/tasks/98d56652-a41c-4e59-af6c-ad306436af42
