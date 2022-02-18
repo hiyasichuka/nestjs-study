@@ -15,3 +15,12 @@ GET http://localhost:3000/tasks/6dc8a582-bffe-43e1-ba12-22a61cd734ac
 
 ###
 DELETE http://localhost:3000/tasks/98d56652-a41c-4e59-af6c-ad306436af42
+
+
+###
+PATCH http://localhost:3000/tasks/def65a45-fa6d-4ccc-a1c4-ab54da22287b/status HTTP/1.1
+content-type: application/json
+
+{
+    "status": "IN_PROGRESS"
+}
