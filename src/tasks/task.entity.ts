@@ -13,5 +13,5 @@ export class Task {
   description: string;
 
   @Column()
-  satatus: TaskStatus;
+  status: TaskStatus;
 }

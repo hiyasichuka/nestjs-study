@@ -19,6 +19,7 @@ export class TasksService {
     }
     return found;
   }
+
   //   private tasks: Task[] = [];
   //   getAllTasks(): Task[] {
   //     return this.tasks;
@@ -50,17 +51,10 @@ export class TasksService {
   //     const found = this.getTaskById(id)
   //     this.tasks = this.tasks.filter((task) => task.id !== id);
   //   }
-  //   createTask(createTaskDto: CreateTaskDto): Task {
-  //     const { title, description } = createTaskDto;
-  //     const task: Task = {
-  //       id: randomUUID(),
-  //       title,
-  //       description,
-  //       status: TaskStatus.OPEN,
-  //     };
-  //     this.tasks.push(task);
-  //     return task;
-  //   }
+
+  createTask(createTaskDto: CreateTaskDto): Promise<Task> {
+    return this.tasksRepository.createTask(createTaskDto);
+  }
   //   updateTaskStatus(id: string, status: TaskStatus) {
   //     const task = this.getTaskById(id);
   //     task.status = status;
