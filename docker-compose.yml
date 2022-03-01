@@ -1,0 +1,26 @@
+version: '3'
+services:
+  pgweb:
+    image: sosedoff/pgweb:0.11.10
+    container_name: pgweb
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      - DATABASE_URL=postgres://postgres:pgweb@postgres:5432/task-management?sslmode=disable
+    depends_on:
+      - db
+  db:
+    image: postgres:alpine
+    container_name: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - ./initdb:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_DB: task-management
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pgweb
+      POSTGRES_INITCB_ARGS: '--encoding=UTF-8 --locale=ja_JP.UTF-8'
+      TZ: Asia/Tokyo
