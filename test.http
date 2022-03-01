@@ -28,9 +28,7 @@ GET http://localhost:3000/tasks?status=OPEN&search=WED
 GET http://localhost:3000/tasks/6dc8a582-bffe-43e1-ba12-22a61cd734ac
 
 ###
-DELETE http://localhost:3000/tasks/98d56652-a41c-4e59-af6c-ad306436af42
-
-
+DELETE http://localhost:3000/tasks/35af5e3c-6e9b-44ea-8c10-17535a35a749
 ###
 PATCH http://localhost:3000/tasks/892bd3fe-38be-49f0-b87f-05439f91cff5/status HTTP/1.1
 content-type: application/json
