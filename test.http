@@ -44,6 +44,15 @@ POST http://localhost:3000/auth/signup HTTP/1.1
 content-type: application/json
 
 {
-    "username": "takahashi2",
-    "password": "Apjopqi"
+    "username": "username2",
+    "password": "ApjopPq89i"
+}
+
+###
+POST http://localhost:3000/auth/signin HTTP/1.1
+content-type: application/json
+
+{
+    "username": "username2",
+    "password": "ApjopPq89ia"
 }
