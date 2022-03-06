@@ -48,8 +48,10 @@ content-type: application/json
     "password": "ApjopPq89i"
 }
 
+
+@auth_token
 ###
-POST http://localhost:3000/auth/signin HTTP/1.1
+POST http://localhost:3000/auth/signin
 content-type: application/json
 
 {
@@ -65,3 +67,14 @@ content-type: application/json
     "username": "username2",
     "password": "ApjopPq89ia"
 }
+
+###
+POST http://localhost:3000/auth/test
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lMiIsImlhdCI6MTY0NjU1MDkzOSwiZXhwIjoxNjQ2NTU0NTM5fQ.czmBubs96By2ZmZ9XTM3c-DN8E7B_XLLzP4jGGvxao0
+
+{
+    "username": "username2",
+    "password": "ApjopPq89ia"
+}
+###
