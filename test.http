@@ -1,7 +1,7 @@
 ###
 POST http://localhost:3000/tasks HTTP/1.1
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lMiIsImlhdCI6MTY0NjcwNzUyNSwiZXhwIjoxNjQ2NzExMTI1fQ.rQxdSg4XDaMVtfQOjtKgIcfgaOY6Q-iAqov7zk39Cjk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lMiIsImlhdCI6MTY0NjcwODI1NywiZXhwIjoxNjQ2NzExODU3fQ.CqK0-k_gpreRHGSQQYll0wRxulCQaKbDlU5jeDqSTP8
 
 {
     "title": "sample",
@@ -20,7 +20,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZ
 
 ###
 GET http://localhost:3000/tasks
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lMiIsImlhdCI6MTY0NjcwNzUyNSwiZXhwIjoxNjQ2NzExMTI1fQ.rQxdSg4XDaMVtfQOjtKgIcfgaOY6Q-iAqov7zk39Cjk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lMiIsImlhdCI6MTY0NjcwODI1NywiZXhwIjoxNjQ2NzExODU3fQ.CqK0-k_gpreRHGSQQYll0wRxulCQaKbDlU5jeDqSTP8
 ###
 GET http://localhost:3000/tasks?status=IN_PROGRESS
 
@@ -44,7 +44,6 @@ content-type: application/json
 ###
 POST http://localhost:3000/auth/signup HTTP/1.1
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lMiIsImlhdCI6MTY0NjcwNzUyNSwiZXhwIjoxNjQ2NzExMTI1fQ.rQxdSg4XDaMVtfQOjtKgIcfgaOY6Q-iAqov7zk39Cjk
 
 {
     "username": "username2",
