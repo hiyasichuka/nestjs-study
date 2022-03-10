@@ -1,7 +1,7 @@
 ###
 POST http://localhost:3000/tasks HTTP/1.1
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjQ2NzE2OTA1LCJleHAiOjE2NDY3MjA1MDV9.hoVSYm41wki26da6SMwSaLFO8X_HtemQBnzxlGF-sF8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lMiIsImlhdCI6MTY0Njg3Nzc4MiwiZXhwIjoxNjQ2ODgxMzgyfQ.J9uSGS2KjLR4FGWBxexTKVHC0vUurHuizoxAUz3YWXs
 
 {
     "title": "sample",
@@ -20,7 +20,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZ
 
 ###
 GET http://localhost:3000/tasks
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjQ2NzE2OTA1LCJleHAiOjE2NDY3MjA1MDV9.hoVSYm41wki26da6SMwSaLFO8X_HtemQBnzxlGF-sF8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lMiIsImlhdCI6MTY0Njg3Nzc4MiwiZXhwIjoxNjQ2ODgxMzgyfQ.J9uSGS2KjLR4FGWBxexTKVHC0vUurHuizoxAUz3YWXs
 ###
 GET http://localhost:3000/tasks?status=IN_PROGRESS
 
@@ -28,14 +28,16 @@ GET http://localhost:3000/tasks?status=IN_PROGRESS
 GET http://localhost:3000/tasks?search=WED
 
 ###
-GET http://localhost:3000/tasks/6dc8a582-bffe-43e1-ba12-22a61cd734ac
+GET http://localhost:3000/tasks/d6f73496-96b5-45a6-b950-40f3f864eef7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lMiIsImlhdCI6MTY0Njg3Nzc4MiwiZXhwIjoxNjQ2ODgxMzgyfQ.J9uSGS2KjLR4FGWBxexTKVHC0vUurHuizoxAUz3YWXs
 
 ###
-DELETE http://localhost:3000/tasks/35af5e3c-6e9b-44ea-8c10-17535a35a749
-
+DELETE http://localhost:3000/tasks/b68a1671-f697-4673-9830-58d1ce02b364
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lMiIsImlhdCI6MTY0Njg3Nzc4MiwiZXhwIjoxNjQ2ODgxMzgyfQ.J9uSGS2KjLR4FGWBxexTKVHC0vUurHuizoxAUz3YWXs
 ###
 PATCH http://localhost:3000/tasks/f114f4c1-2ab3-4e4e-9f30-1ac0de95b947/status HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lMiIsImlhdCI6MTY0Njg3Nzc4MiwiZXhwIjoxNjQ2ODgxMzgyfQ.J9uSGS2KjLR4FGWBxexTKVHC0vUurHuizoxAUz3YWXs
 
 {
     "status": "IN_PROGRESS"
