@@ -1,9 +1,12 @@
 import { TasksRepository } from './tasks.repository';
 import { TasksService } from './tasks.service';
 import { Test } from '@nestjs/testing';
+import { TaskStatus } from './task-status.enum';
+import { NotFoundException } from '@nestjs/common';
 
 const mockTasksRepository = () => ({
   getTasks: jest.fn(), // 後にテストコードで振る舞いを記述するためjest.fn()を利用
+  findOne: jest.fn(),
 });
 
 // リポジトリの引数に必要となるユーザデータクラスのダミーデータ
@@ -16,7 +19,7 @@ const mockUser = {
 
 describe('TaskService', () => {
   let tasksService: TasksService;
-  let tasksRepository: TasksRepository;
+  let tasksRepository;
 
   beforeEach(async () => {
     // テストモジュールを作成する。
@@ -42,6 +45,15 @@ describe('TaskService', () => {
       tasksService.getTasks(null, mockUser);
       // 呼び出されたことをテスト
       expect(tasksRepository.getTasks).toHaveBeenCalled();
+    });
+
+    it('calls TasksRepository.getTasks and returns the result', async () => {
+      tasksRepository.getTasks.mockResolvedValue('someValue');
+      const result = await tasksService.getTasks(null, mockUser);
+      // resultの中身が一致していることをテスト
+      expect(result).toEqual('someValue');
+      // resultの中身が一致していないことをテスト
+      expect(result).not.toEqual('otherValue');
     });
   });
 });
