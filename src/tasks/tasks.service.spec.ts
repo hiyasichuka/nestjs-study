@@ -48,12 +48,41 @@ describe('TaskService', () => {
     });
 
     it('calls TasksRepository.getTasks and returns the result', async () => {
+      // リポジトリの振る舞いを定義
       tasksRepository.getTasks.mockResolvedValue('someValue');
+      // サービスクラスを呼び出す
       const result = await tasksService.getTasks(null, mockUser);
       // resultの中身が一致していることをテスト
       expect(result).toEqual('someValue');
       // resultの中身が一致していないことをテスト
       expect(result).not.toEqual('otherValue');
+    });
+  });
+
+  describe('getTaskById', () => {
+    it('calls TasksRepository.findOne and returns the result', async () => {
+      // テスト用ダミーデータを作成
+      const mockTask = {
+        title: 'Test title',
+        description: 'Test desc',
+        id: 'someId',
+        status: TaskStatus.OPEN,
+      };
+      // リポジトリの振る舞いを定義
+      tasksRepository.findOne.mockResolvedValue(mockTask);
+      // サービスを呼び出す
+      const result = await tasksService.getTaskById('someId', mockUser);
+      // 想定通りの結果であることを確認
+      expect(result).toEqual(mockTask);
+    });
+
+    it('calls TasksRepository.findOne and handles an error', async () => {
+      // リポジトリの振る舞いを定義
+      tasksRepository.findOne.mockResolvedValue(null);
+      // 想定の例外が発生することを確認
+      expect(tasksService.getTaskById('someId', mockUser)).rejects.toThrow(
+        NotFoundException,
+      );
     });
   });
 });
