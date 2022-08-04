@@ -29,8 +29,9 @@ describe('TaskService', () => {
         TasksService,
         { provide: TasksRepository, useFactory: mockTasksRepository },
       ],
-    }).compile(); // テストモジュールからサービスクラスを受け取る
-
+    }).compile(); 
+    
+    // テストモジュールからサービスクラスを受け取る
     tasksService = module.get(TasksService);
 
     // テストモジュールからリポジトリクラスを受け取る
