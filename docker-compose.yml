@@ -1,7 +1,7 @@
 version: '3'
 services:
   pgweb:
-    image: sosedoff/pgweb:0.11.10
+    image: sosedoff/pgweb:0.13.1
     container_name: pgweb
     restart: always
     ports:
