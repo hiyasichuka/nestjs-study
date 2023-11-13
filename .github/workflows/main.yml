@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Yarn Cache
-        uses: c-hive/gha-yarn-cache@v1
+        uses: c-hive/gha-yarn-cache@v2
 
       - name: Install dependencies
         run: yarn
